@@ -1,0 +1,91 @@
+the demo run results:
+
+SENTENCE: is the sapiens: a brief history of humankind available?
+Time taken for processing: 4.04 seconds
+Facts: []
+Goal: is_available(i06).
+Answer: No.
+
+SENTENCE: bob has borrowed i02 on day 169 , Is it overdue?
+Time taken for processing: 4.81 seconds
+Facts: ['borrowed(u02, i02, 169).']
+Goal: is_overdue(u02, i02).
+Answer: Yes.
+
+SENTENCE: sara borrowed the pragmatic programmer on day 170. Is it overdue?
+Time taken for processing: 4.96 seconds
+Facts: ['borrowed(u05, i04, 170).']
+Goal: is_overdue(u05, i04).
+Answer: No.
+
+SENTENCE: clara wants to borrow i03. May she borrow it?
+Time taken for processing: 3.84 seconds
+Facts: []
+Goal: may_borrow(u03, i03).
+Answer: This borrowing is allowed.
+
+SENTENCE: bob wants to borrow the sapiens: a brief history of humankind. is this allowed?
+Time taken for processing: 4.14 seconds
+Facts: []
+Goal: may_borrow(u02, i06).
+Answer: This borrowing is allowed.
+
+SENTENCE: clara wants to borrow the oxford english dictionary. May she borrow it?
+Time taken for processing: 3.89 seconds
+Facts: []
+Goal: may_borrow(u03, i21).
+Answer: Not allowed: reference books cannot be borrowed.
+
+SENTENCE: sara wants to borrow i20. is it able to be borrowed?
+Time taken for processing: 3.73 seconds
+Facts: []
+Goal: may_borrow(u05, i20).
+Answer: Not allowed: this is a rare book (published before 1915) and is restricted.
+
+SENTENCE: bob borrowed i01 and i05 and i13 on day 180, and he wants to borrow i24,could he borrow it ?
+Time taken for processing: 6.85 seconds
+Facts: ['borrowed(u02, i01, 180).', 'borrowed(u02, i05, 180).', 'borrowed(u02, i13, 180).']
+Goal: may_borrow(u02, i24).
+Answer: Not allowed: the user has reached their borrowing limit.
+
+SENTENCE: bob borrowed i01 on day 150. Can he borrow deep learning?
+Time taken for processing: 4.75 seconds
+Facts: ['borrowed(u02, i01, 150).']
+Goal: may_borrow(u02, i03).
+Answer: Not allowed: the user has an overdue book and must return it first.
+
+SENTENCE: clara wants to borrow i01 which is borrowed by bob on day 170.Is the book overdue and Is she able to borrow it?
+Time taken for processing: 5.65 seconds
+Facts: ['borrowed(u02, i01, 170).']
+Goal: may_borrow(u03, i01).
+Answer: Not allowed: the book is already borrowed by someone else.
+
+SENTENCE: suggest computer science books for adam
+Time taken for processing: 3.77 seconds
+Facts: []
+Goal: suggest_all(u04, computer_science).
+Answer: [book(i03,deep learning,manual,2016,computer_science),book(i04,pragmatic programmer,manual,2019,computer_science),book(i05,artificial intelligence: a modern approach,manual,1995,computer_science)]
+
+SENTENCE: bob borrowed i02 on day 170 and sara borrowed i04 on day 170. Suggest computer science books for adam.
+Time taken for processing: 5.69 seconds
+Facts: ['borrowed(u02, i02, 170).', 'borrowed(u05, i04, 170).']
+Goal: suggest_all(u04, computer_science).
+Answer: [book(i03,deep learning,manual,2016,computer_science),book(i05,artificial intelligence: a modern approach,manual,1995,computer_science)]
+
+SENTENCE: bob borrowed 3 books: i01 and i05 and i13 on day 180, and he wants to borrow i10 ,could he borrow it ?
+Time taken for processing: 6.63 seconds
+Facts: ['borrowed(u02, i01, 180).', 'borrowed(u02, i05, 180).', 'borrowed(u02, i13, 180).']
+Goal: may_borrow(u02, i10).
+Answer: Not allowed: the user has reached their borrowing limit.
+
+SENTENCE: Can sara borrow the theory of everything?
+Time taken for processing: 3.66 seconds
+Facts: []
+Goal: None
+Answer: Error: Unknown book: the theory of everything
+
+SENTENCE: Can michael borrow deep learning?
+Time taken for processing: 3.55 seconds
+Facts: []
+Goal: None
+Answer: Error: Unknown user: michael (role=None)
