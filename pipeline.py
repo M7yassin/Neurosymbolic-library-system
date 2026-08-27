@@ -222,7 +222,7 @@ print(result)"""
 def process(sentence):
     start = time.time()
     parsed = parse_sentence(sentence)
-    print("PARSED:", parsed)
+    #print("PARSED:", parsed)
     try:
         resolved_facts = [resolve(f) for f in parsed["facts"]]            
         resolved_query = resolve(parsed["query"])
