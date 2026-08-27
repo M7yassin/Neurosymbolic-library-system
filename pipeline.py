@@ -50,7 +50,7 @@ REASONS={
     "rare_book": "Not allowed: this is a rare book (published before 1915) and is restricted.",
     "over_limit":"Not allowed: the user has reached their borrowing limit.",
     "has_overdue":"Not allowed: the user has an overdue book and must return it first.",
-    "already_borrowed":"Not allowed: the book is already borrowed to someone else.",
+    "already_borrowed":"Not allowed: the book is already borrowed by someone else.",
     "reserved_by_other":"Not allowed: the book is reserved by another user, but you can add yourself to the reservation queue."
 }
 
