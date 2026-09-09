@@ -28,18 +28,28 @@ The system follows a decoupled pipeline:
 ## Installation and usage
 
 1. Clone the repository:
+   
 git clone https://github.com/M7yassin/Neurosymbolic-library-system.git
+
 2. Install the Python dependency:
+   
 pip install -r requirements.txt
+
 3. Pull the model and start the Ollama server (keep it running):
+
 ollama pull qwen2.5
+
 ollama serve
+
 4. Run the system:
+
 python demo.py
 
 ## Example
 
 Input: Sara borrowed the pragmatic programmer on day 169. Is it overdue?
+
 The system extracts the fact `borrowed(u05, i04, 169)`, runs the goal
 `is_overdue(u05, i04)`, and returns:
+
 Yes.
